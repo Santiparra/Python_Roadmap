@@ -16,9 +16,7 @@
 #     Return the total damage
 
 def calculate_flurry_crit(num_attacks, base_damage):
-    total_damage = ((num_attacks -1) * (base_damage *2)) + (base_damage * 4)                
-        
-    
+    total_damage = ((num_attacks -1) * (base_damage *2)) + (base_damage * 4)                    
     return total_damage
 
 #OR
