@@ -16,3 +16,15 @@
 
 # The calculate_experience_points function takes a single parameter named level. Determine the total XP needed to reach 
 # the specified level from level 1 and return it.
+def calculate_experience_points(level):
+    total_exp = 0
+    for i in range(level):
+        total_exp += (i *5)
+    return total_exp
+#OR
+def calculate_experience_points(level):
+    xp = 0
+    for i in range(1, level):
+        xp += i * 5
+
+    return xp
