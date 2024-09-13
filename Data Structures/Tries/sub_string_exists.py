@@ -1,10 +1,23 @@
 class Trie:
     def find_matches(self, document):
-        pass
+        matches = set()
+        doc_length = len(document)
+        
+        for start_index in range(doc_length):
+            current = self.root
+            for end_index in range(start_index, doc_length):
+                char = document[end_index]
+                if char not in current:
+                    break
+                current = current[char]
+                if self.end_symbol in current:
+                    matches.add(document[start_index:end_index + 1])
+        
+        return matches
 
 ################## Below CONTEXT code #################
 
-    def __init__(self):
+  def __init__(self):
         self.root = {}
         self.end_symbol = "*"
 
@@ -15,6 +28,7 @@ class Trie:
                 current[letter] = {}
             current = current[letter]
         current[self.end_symbol] = True
+
 
 ################## Below Pseudo code #################
 """
